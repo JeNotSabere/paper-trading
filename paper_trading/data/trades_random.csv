@@ -1,0 +1,2 @@
+id,ts_utc,agent,symbol,side,qty,price_eur,fee_eur,cash_after_eur,realized_pnl_eur
+84f4cfce-0673-4a33-8581-abc6eeaefae5,2026-04-10T21:23:34.016819+00:00,Random baseline,AIR.PA,BUY,0.02680000,169.542375,0.2500,45.2063,

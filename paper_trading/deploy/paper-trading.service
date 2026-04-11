@@ -1,0 +1,16 @@
+[Unit]
+Description=Paper trading Discord agents (24/7)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/paper_trading
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/ubuntu/paper_trading/.venv/bin/python -m paper_agent.main
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
