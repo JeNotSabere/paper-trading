@@ -42,6 +42,9 @@ class Settings:
     percent_fee: float
     min_fee_eur: float
     spread_bps: float
+    min_order_notional_eur: float
+    max_fee_rate_per_side: float
+    max_symbol_allocation: float
     data_dir: Path
 
 
@@ -74,5 +77,8 @@ def load_settings() -> Settings:
         percent_fee=_f("PERCENT_FEE", 0.0008),
         min_fee_eur=_f("MIN_FEE_EUR", 0.25),
         spread_bps=_f("SPREAD_BPS", 5.0),
+        min_order_notional_eur=_f("MIN_ORDER_NOTIONAL_EUR", 25.0),
+        max_fee_rate_per_side=_f("MAX_FEE_RATE_PER_SIDE", 0.02),
+        max_symbol_allocation=_f("MAX_SYMBOL_ALLOCATION", 0.45),
         data_dir=data_dir,
     )

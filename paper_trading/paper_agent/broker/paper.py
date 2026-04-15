@@ -110,6 +110,8 @@ class PaperBroker:
         exec_px = apply_spread_to_price(mid_price_eur, "SELL", self.spread_bps)
         notional = qty * exec_px
         fee = compute_fee_eur(notional, percent_fee=self.percent_fee, min_fee_eur=self.min_fee_eur)
+        if fee >= notional - 1e-12:
+            return None
         proceeds = notional - fee
 
         cost_basis = qty * prev.avg_price_eur

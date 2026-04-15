@@ -115,7 +115,7 @@ async def _tick(
     eq = b.equity_eur(prices)
     action = bundle.strategy.decide(b, prices, history, bundle.learner)
     bundle.last_meta = action.meta
-    rec = execute_action(b, prices, action, eq)
+    rec = execute_action(b, prices, action, eq, settings)
     if not rec:
         return
 

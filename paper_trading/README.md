@@ -60,6 +60,7 @@ Override names in `.env` if needed (see `.env.example`).
    ```
 
    Set `DISCORD_BOT_TOKEN`, confirm `DISCORD_GUILD_ID`, and tune `WATCHLIST` / fees if you want.
+   For low balances, also tune `MIN_ORDER_NOTIONAL_EUR` and `MAX_FEE_RATE_PER_SIDE` to avoid fee-heavy micro-trades.
 
 5. **Invite the bot** with **applications.commands** scope if you add slash commands later; for posting only, ensure the bot role can **View channel** and **Send messages** in those channels.
 
@@ -119,3 +120,5 @@ Use tmux only for quick tests.
 ## Free price data note
 
 **yfinance** is unofficial and may rate-limit or return delayed quotes. For a stricter crypto feed you could add CoinGecko later; the code is structured so you can swap `PriceFeed` without touching strategies.
+
+Prices are normalized to EUR in `PriceFeed`, so mixed watchlists (US stocks in USD, EU stocks in EUR/GBp, crypto pairs) can be compared in the same portfolio.
